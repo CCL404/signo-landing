@@ -254,17 +254,17 @@
     .service-card {
       background: #f4f0ea;
       border-radius: 4px;
-      overflow: hidden;
+      padding: 40px 32px;
       transition: background 0.25s;
     }
     .service-card:hover { background: #edefe8; }
-    .service-card .card-body { padding: 28px 32px 36px; }
-    .service-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 24px;
+      color: #8fa392;
     }
+    .service-icon svg { display: block; width: 100%; height: 100%; }
     .service-card p {
       font-size: 0.9rem;
       color: #8a8070;
@@ -536,8 +536,7 @@
       .spaces-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: 1fr; gap: 36px; }
       footer .container { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .service-card .card-body { padding: 20px 24px 28px; }
-      .service-img { height: 130px; }
+      .service-card { padding: 32px 24px; }
     }
 
     @media (max-width: 768px) {
@@ -664,28 +663,22 @@
       <p class="section-desc">Clear, well-made signage and finishing for commercial interiors. Each service is designed for small-to-medium jobs that larger contractors often won't take.</p>
       <div class="services-grid">
         <div class="service-card">
-          <img class="service-img" src="service-door-sign.jpg" alt="Fire safety door sign" loading="lazy">
-          <div class="card-body">
-            <h3>Door Signs</h3>
-            <p>Room ID, nameplates, department signage, glass door decals, and suite identification. Custom sizes, finishes, and mounting for any interior.</p>
-            <span class="outcome">→ Clear, professional room identification</span>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs><filter id="brushA" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="7" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4" xChannelSelector="R" yChannelSelector="G"/></filter></defs><g filter="url(#brushA)" fill="none" stroke="#8FA392" stroke-linecap="round" stroke-linejoin="round"><path d="M32 20.5C31 21.2 30.4 22.3 30.4 23.7V72.4C30.4 73.9 31.2 75 32.6 75.8H61.8C63.1 75 63.9 73.9 63.9 72.4V23.9C63.9 22.4 63.2 21.2 62 20.5Z" stroke-width="4.8"/><path d="M39.5 22.8V73.1" stroke-width="4.2"/><path d="M52.2 47.9c1.8-.5 3.3.2 4 1.7.7 1.7-.3 3.4-2.3 4" stroke-width="3.6"/></g></svg></div>
+          <h3>Door Signs</h3>
+          <p>Room ID, nameplates, department signage, glass door decals, and suite identification. Custom sizes, finishes, and mounting for any interior.</p>
+          <span class="outcome">→ Clear, professional room identification</span>
         </div>
         <div class="service-card">
-          <img class="service-img" src="service-wayfinding.jpg" alt="Wayfinding directional sign" loading="lazy">
-          <div class="card-body">
-            <h3>Wayfinding</h3>
-            <p>Directional signage, floor directories, zone identification, and lobby maps. Helps visitors and staff navigate your space without confusion.</p>
-            <span class="outcome">→ Easy navigation, fewer interruptions</span>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs><filter id="brushB" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="1" seed="11" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="B"/></filter></defs><g filter="url(#brushB)" fill="none" stroke="#8FA392" stroke-linecap="round" stroke-linejoin="round"><path d="M28 68.5C28 57 28.2 49.2 28.4 43.6C28.9 32.7 36.5 26.6 46.4 26.6H59.5" stroke-width="5"/><path d="M54.2 19.8L68 26.7 54.4 34.5" stroke-width="4.8"/><path d="M28 68.5c1.5-1.8 3.5-2.6 5.6-2" stroke-width="3.6"/></g></svg></div>
+          <h3>Wayfinding</h3>
+          <p>Directional signage, floor directories, zone identification, and lobby maps. Helps visitors and staff navigate your space without confusion.</p>
+          <span class="outcome">→ Easy navigation, fewer interruptions</span>
         </div>
         <div class="service-card">
-          <img class="service-img" src="service-repair.jpg" alt="Wall repair after sign removal" loading="lazy">
-          <div class="card-body">
-            <h3>Minor Repairs / Finishing</h3>
-            <p>Wall touch-ups after sign removal, surface preparation for new signage, and small patching work related to signage changes. Not a full plastering service — just the finishing details that make a signage update look complete.</p>
-            <span class="outcome">→ Clean results, no leftover marks or holes</span>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs><filter id="brushC" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="1" seed="15" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.35" xChannelSelector="G" yChannelSelector="R"/></filter></defs><g filter="url(#brushC)" fill="none" stroke="#8FA392" stroke-linecap="round" stroke-linejoin="round"><path d="M33.8 26.3C36.3 23.4 40.2 23.1 42.8 25.6L49 31.8C50.8 33.7 51.1 36.1 49.7 37.8L43.3 45.3C42.1 46.7 40 47.1 38.3 46.2C34.9 44.5 31.9 41.7 29.9 38.3C29 36.8 29.3 34.8 30.6 33.4Z" stroke-width="4.3"/><path d="M43.1 45.1L60.9 62.8" stroke-width="4.5"/><path d="M55.9 64.5C59.4 63.2 62.7 62.9 66.2 63.6" stroke-width="4"/></g></svg></div>
+          <h3>Minor Repairs / Finishing</h3>
+          <p>Wall touch-ups after sign removal, surface preparation for new signage, and small patching work related to signage changes. Not a full plastering service — just the finishing details that make a signage update look complete.</p>
+          <span class="outcome">→ Clean results, no leftover marks or holes</span>
         </div>
       </div>
     </div>
