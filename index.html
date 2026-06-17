@@ -15,7 +15,10 @@
     body {
       font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
       color: #7a6e5e;
-      background: #f4f0ea;
+      background-color: #f4f0ea;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
       line-height: 1.7;
     }
     img { max-width: 100%; height: auto; display: block; }
@@ -213,7 +216,12 @@
     }
 
     /* ===== Sections common ===== */
-    section:nth-child(even) { background: #faf6ef; }
+    section:nth-child(even) {
+      background-color: #faf6ef;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
 
     /* ===== Services ===== */
     .services-grid {
