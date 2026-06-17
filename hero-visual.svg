@@ -2,111 +2,108 @@
   <defs>
     <!-- Paper grain -->
     <filter id="grain">
-      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="4" seed="3" result="n"/>
-      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
-      <feComponentTransfer in="g"><feFuncA type="linear" slope="0.04"/></feComponentTransfer>
-      <feBlend in="SourceGraphic" in2="g" mode="multiply"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.45" numOctaves="5" seed="3" result="n"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.045"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="multiply"/>
     </filter>
 
-    <!-- Heavy brush — thick, splintered, irregular -->
+    <!-- MAXIMUM ROUGH — jagged, broken, splintered brush -->
+    <filter id="brushX" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.35" numOctaves="4" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Heavy rough -->
     <filter id="brushH" x="-20%" y="-20%" width="140%" height="140%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" seed="7" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" seed="23" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
 
-    <!-- Medium brush -->
+    <!-- Medium slash -->
     <filter id="brushM" x="-15%" y="-15%" width="130%" height="130%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="13" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="B"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="29" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="B"/>
     </filter>
 
-    <!-- Splatter / ink spray effect -->
-    <filter id="splatter" x="-25%" y="-25%" width="150%" height="150%">
-      <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="19" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="B" yChannelSelector="R"/>
+    <!-- Ink splatter dots -->
+    <filter id="dot" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="2" seed="37" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="B" yChannelSelector="R"/>
     </filter>
-
-    <linearGradient id="sageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8FA392"/>
-      <stop offset="100%" stop-color="#6a7d6e"/>
-    </linearGradient>
-
-    <linearGradient id="sageLight" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a8bca8"/>
-      <stop offset="100%" stop-color="#8FA392"/>
-    </linearGradient>
-
-    <linearGradient id="branchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#5a4e42"/>
-      <stop offset="100%" stop-color="#7a6e5e"/>
-    </linearGradient>
   </defs>
 
   <!-- Canvas -->
   <rect width="400" height="500" fill="#f4f0ea" filter="url(#grain)"/>
 
-  <!-- Very subtle sage atmosphere wash -->
-  <ellipse cx="200" cy="180" rx="200" ry="160" fill="#8FA392" opacity="0.018"/>
+  <!-- ===== Branch — single angular slash ===== -->
+  <g filter="url(#brushX)">
+    <polyline points="-20,470 30,420 80,380 130,345 180,315 220,290 260,272 300,260 340,255 380,258 420,270"
+              fill="none" stroke="#5a4e42" stroke-width="18" stroke-linejoin="miter"/>
+  </g>
 
-  <!-- ===== Branch — ONE big, bold diagonal slash ===== -->
+  <!-- Secondary flick — quick upward -->
+  <g filter="url(#brushH)" opacity="0.5">
+    <line x1="165" y1="328" x2="195" y2="265" stroke="#6a5e52" stroke-width="6" stroke-linecap="round"/>
+    <line x1="195" y1="265" x2="205" y2="235" stroke="#6a5e52" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== Pigeon — just raw angular blocks ===== -->
+
+  <!-- Body/chest block — one heavy sage splash -->
+  <g filter="url(#brushX)">
+    <polygon points="255,295 230,255 200,230 185,235 178,248 185,275 205,300 230,310 250,305"
+             fill="#8FA392" opacity="0.92"/>
+  </g>
+
+  <!-- Wing slash — a single fierce diagonal cut -->
   <g filter="url(#brushH)">
-    <path d="M-20 460 Q60 400 140 340 Q200 290 270 260 Q340 235 420 250"
-          fill="none" stroke="url(#branchGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="250,298 265,318 275,342 268,340 255,328 245,315 240,302"
+             fill="#5a6d5e" opacity="0.88"/>
   </g>
 
-  <!-- Subtle secondary branch line — quick flick -->
-  <g filter="url(#brushM)" opacity="0.6">
-    <path d="M170 325 Q185 290 200 260 Q210 240 215 225"
-          fill="none" stroke="#6a5e52" stroke-width="5" stroke-linecap="round"/>
+  <!-- Head — rough lump -->
+  <g filter="url(#brushX)">
+    <polygon points="200,242 192,228 180,222 172,228 175,240 182,248 192,248"
+             fill="#7B8E7F"/>
   </g>
 
-  <!-- ===== Pigeon — abstract, 3 strokes ===== -->
-
-  <!-- Stroke 1: Body — bold sage oval/slash -->
-  <g filter="url(#brushM)">
-    <path d="M250 280 Q225 245 195 235 Q180 230 175 240 Q172 250 185 270 Q200 290 225 300 Q245 305 258 295 Q262 288 250 280Z"
-          fill="url(#sageGrad)" opacity="0.92"/>
-  </g>
-
-  <!-- Stroke 2: Wing / tail — a single decisive slash -->
+  <!-- Beak — sharp angular jab -->
   <g filter="url(#brushH)">
-    <path d="M248 290 Q265 310 278 335 Q282 345 270 342 Q258 335 248 318 Q242 305 248 290Z"
-          fill="#5a6d5e" opacity="0.85"/>
+    <polygon points="172,228 155,224 170,232" fill="#4a3e32"/>
   </g>
 
-  <!-- Stroke 3: Head — a simple round dab -->
-  <g filter="url(#splatter)">
-    <ellipse cx="188" cy="228" rx="14" ry="13" fill="#8FA392"/>
+  <!-- Eye — raw dot -->
+  <g filter="url(#dot)">
+    <circle cx="182" cy="226" r="4" fill="#3a3228"/>
   </g>
 
-  <!-- Beak — quick tiny slash -->
-  <g filter="url(#brushM)">
-    <path d="M176 225 L162 222 L175 228Z" fill="#5a4e42"/>
+  <!-- Ink splatter dots around the scene -->
+  <g filter="url(#dot)" opacity="0.15">
+    <circle cx="160" cy="210" r="2.5" fill="#5a6d5e"/>
+    <circle cx="280" cy="275" r="3" fill="#5a6d5e"/>
+    <circle cx="310" cy="250" r="1.5" fill="#5a6d5e"/>
+    <circle cx="175" cy="320" r="2" fill="#5a6d5e"/>
+    <circle cx="145" cy="300" r="1.8" fill="#5a6d5e"/>
   </g>
 
-  <!-- Eye — single dot -->
-  <circle cx="184" cy="225" r="3" fill="#3a3228"/>
-  <circle cx="183" cy="224" r="1" fill="#faf6ef" opacity="0.6"/>
-
-  <!-- Legs — two loose lines down to branch -->
-  <g filter="url(#brushM)" opacity="0.7">
-    <line x1="228" y1="295" x2="226" y2="304" stroke="#5a4e42" stroke-width="3" stroke-linecap="round"/>
-    <line x1="238" y1="297" x2="240" y2="306" stroke="#5a4e42" stroke-width="3" stroke-linecap="round"/>
+  <!-- Leg scratch marks -->
+  <g filter="url(#brushM)" opacity="0.55">
+    <line x1="225" y1="300" x2="222" y2="308" stroke="#4a3e32" stroke-width="4" stroke-linecap="round"/>
+    <line x1="238" y1="303" x2="235" y2="310" stroke="#4a3e32" stroke-width="4" stroke-linecap="round"/>
   </g>
 
-  <!-- ===== Calligraphy seal mark — right side ===== -->
-  <g filter="url(#brushM)" opacity="0.18">
-    <!-- Vertical stamp mark -->
-    <rect x="350" y="80" width="2" height="35" rx="1" fill="#7B8E7F"/>
-    <rect x="359" y="85" width="2" height="25" rx="1" fill="#7B8E7F"/>
-    <rect x="368" y="82" width="2" height="30" rx="1" fill="#7B8E7F"/>
-    <!-- Seal frame -->
-    <rect x="346" y="75" width="28" height="42" rx="1" fill="none" stroke="#7B8E7F" stroke-width="1.2"/>
+  <!-- ===== Seal/stamp area ===== -->
+  <g filter="url(#brushM)" opacity="0.12">
+    <rect x="348" y="75" width="26" height="38" rx="1" fill="none" stroke="#7B8E7F" stroke-width="1.5"/>
+    <line x1="353" y1="82" x2="353" y2="108" stroke="#7B8E7F" stroke-width="2.5"/>
+    <line x1="360" y1="86" x2="360" y2="102" stroke="#7B8E7F" stroke-width="2.5"/>
+    <line x1="367" y1="84" x2="367" y2="105" stroke="#7B8E7F" stroke-width="2.5"/>
   </g>
 
-  <!-- Bottom-right stamp -->
-  <g filter="url(#splatter)" opacity="0.1">
-    <rect x="372" y="457" width="18" height="18" rx="1" fill="#6a7d6e"/>
+  <!-- Bottom sage stamp -->
+  <g filter="url(#dot)" opacity="0.08">
+    <rect x="373" y="458" width="16" height="16" rx="1" fill="#6a7d6e"/>
   </g>
 
 </svg>
