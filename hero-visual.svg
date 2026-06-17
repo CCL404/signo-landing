@@ -1,119 +1,148 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
   <defs>
-    <!-- Plaster/limewash surface texture -->
-    <filter id="plaster" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="5" seed="3" result="noise"/>
-      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
-      <feComponentTransfer in="grayNoise" result="softNoise">
-        <feFuncA type="linear" slope="0.06"/>
+    <!-- Canvas grain texture -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="4" seed="3" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="soft">
+        <feFuncA type="linear" slope="0.035"/>
       </feComponentTransfer>
-      <feBlend in="SourceGraphic" in2="softNoise" mode="multiply"/>
+      <feBlend in="SourceGraphic" in2="soft" mode="multiply"/>
     </filter>
 
-    <!-- Dusty mineral haze -->
-    <filter id="haze" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="7" result="haze"/>
-      <feColorMatrix type="saturate" values="0" in="haze" result="grayHaze"/>
-      <feComponentTransfer in="grayHaze" result="softHaze">
-        <feFuncA type="linear" slope="0.04"/>
-      </feComponentTransfer>
-      <feBlend in="SourceGraphic" in2="softHaze" mode="screen"/>
+    <!-- Bold brush stroke — thick irregular lines -->
+    <filter id="brushBold" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="17" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
 
-    <!-- Brush stroke displacement for signage lines -->
-    <filter id="brushLine" x="-10%" y="-10%" width="120%" height="120%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="12" result="brushNoise"/>
-      <feDisplacementMap in="SourceGraphic" in2="brushNoise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    <!-- Soft brush stroke — medium irregular lines -->
+    <filter id="brushMed" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="23" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="B"/>
     </filter>
 
-    <!-- Subtle shadow for the panel -->
-    <filter id="panelShadow" x="-5%" y="-5%" width="115%" height="115%">
-      <feDropShadow dx="3" dy="4" stdDeviation="6" flood-color="#3a3228" flood-opacity="0.08"/>
+    <!-- Fine brush stroke for delicate details -->
+    <filter id="brushFine" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.0" numOctaves="1" seed="31" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
 
-    <!-- Softer inner shadow for depth -->
-    <filter id="innerShadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
-      <feOffset dx="0" dy="2" result="offsetBlur"/>
-      <feFlood flood-color="#3a3228" flood-opacity="0.06"/>
-      <feComposite in2="offsetBlur" operator="in" result="shadow"/>
-      <feComposite in="SourceGraphic" in2="shadow" operator="over"/>
-    </filter>
-
-    <!-- Grain overlay for the entire canvas -->
-    <filter id="canvasGrain" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="5" result="grain"/>
-      <feColorMatrix type="saturate" values="0" in="grain" result="grayGrain"/>
-      <feComponentTransfer in="grayGrain" result="softGrain">
-        <feFuncA type="linear" slope="0.025"/>
-      </feComponentTransfer>
-      <feBlend in="SourceGraphic" in2="softGrain" mode="multiply"/>
-    </filter>
-
-    <!-- Sage green fill gradient for signage mark -->
-    <linearGradient id="sageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Sage green gradations -->
+    <linearGradient id="sageBody" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#8FA392"/>
-      <stop offset="100%" stop-color="#7B8E7F"/>
+      <stop offset="60%" stop-color="#7B8E7F"/>
+      <stop offset="100%" stop-color="#6a7d6e"/>
+    </linearGradient>
+
+    <linearGradient id="sageLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a8bca8"/>
+      <stop offset="100%" stop-color="#8FA392"/>
+    </linearGradient>
+
+    <linearGradient id="branchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5a4e42"/>
+      <stop offset="50%" stop-color="#4a3e32"/>
+      <stop offset="100%" stop-color="#7a6e5e"/>
     </linearGradient>
   </defs>
 
-  <!-- Background — warm off-white wall -->
-  <rect width="400" height="500" fill="#f4f0ea" filter="url(#canvasGrain)"/>
+  <!-- Warm off-white canvas background -->
+  <rect width="400" height="500" fill="#f4f0ea" filter="url(#grain)"/>
 
-  <!-- Subtle light from upper-left (warm glow) -->
-  <ellipse cx="80" cy="60" rx="200" ry="180" fill="#faf6ef" opacity="0.15"/>
+  <!-- Subtle sage wash on upper area -->
+  <ellipse cx="200" cy="140" rx="180" ry="120" fill="#8FA392" opacity="0.025"/>
 
-  <!-- ===== Main material panel ===== -->
-  <!-- Shadow beneath panel -->
-  <rect x="46" y="36" width="312" height="430" rx="3" fill="#3a3228" opacity="0.06" filter="url(#panelShadow)"/>
-
-  <!-- Panel surface — grey-beige limewash -->
-  <rect x="42" y="32" width="312" height="430" rx="3" fill="#faf6ef" filter="url(#plaster)"/>
-
-  <!-- Panel surface haze/mottling (uneven render) -->
-  <rect x="42" y="32" width="312" height="430" rx="3" fill="none" filter="url(#haze)"/>
-
-  <!-- Soft light on top-left of panel -->
-  <ellipse cx="110" cy="90" rx="100" ry="80" fill="#ffffff" opacity="0.04"/>
-
-  <!-- Subtle shadow on right side of panel (depth) -->
-  <rect x="300" y="32" width="54" height="430" rx="0" fill="#3a3228" opacity="0.02"/>
-
-  <!-- ===== Signage design element ===== -->
-  <g filter="url(#brushLine)" opacity="0.92">
-
-    <!-- Door icon — centered, enlarged on the panel -->
-    <!-- Door frame — rectangular door shape -->
-    <rect x="160" y="120" width="80" height="190" rx="3" fill="none" stroke="url(#sageGrad)" stroke-width="3.5" stroke-linecap="round"/>
-
-    <!-- Door hinge line (vertical division, slightly offset) -->
-    <line x1="195" y1="130" x2="195" y2="300" stroke="url(#sageGrad)" stroke-width="2.5" stroke-linecap="round"/>
-
-    <!-- Door knob circle -->
-    <circle cx="222" cy="220" r="7" fill="none" stroke="url(#sageGrad)" stroke-width="2.5"/>
-
-    <!-- Directional arrow element below door -->
-    <!-- Arrow shaft -->
-    <line x1="200" y1="330" x2="200" y2="370" stroke="url(#sageGrad)" stroke-width="3" stroke-linecap="round"/>
-
-    <!-- Arrow head -->
-    <polyline points="192,362 200,375 208,362" fill="none" stroke="url(#sageGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-
-    <!-- Small horizontal accent lines suggesting signage text -->
-    <line x1="155" y1="395" x2="245" y2="395" stroke="#7B8E7F" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
-    <line x1="170" y1="405" x2="230" y2="405" stroke="#7B8E7F" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
-    <line x1="180" y1="415" x2="220" y2="415" stroke="#7B8E7F" stroke-width="1.2" stroke-linecap="round" opacity="0.25"/>
-
+  <!-- ===== Branch — bold, rough strokes from lower-left ===== -->
+  <!-- Main branch — diagonal from bottom-left angling up-right -->
+  <g filter="url(#brushBold)">
+    <path d="M-10 450 Q60 420 120 370 Q160 340 210 300 Q240 275 280 260 Q310 250 360 265 Q390 270 410 280"
+          fill="none" stroke="url(#branchGrad)" stroke-width="9" stroke-linecap="round"/>
   </g>
 
-  <!-- ===== Subtle framing lines (architectural context) ===== -->
-  <!-- Top horizontal fine line -->
-  <line x1="60" y1="68" x2="340" y2="68" stroke="#8FA392" stroke-width="0.5" opacity="0.15"/>
+  <!-- Secondary branch — thinner, forking upward -->
+  <g filter="url(#brushMed)">
+    <path d="M160 345 Q170 310 185 280 Q195 260 200 240 Q205 225 195 210"
+          fill="none" stroke="#5a4e42" stroke-width="5" stroke-linecap="round"/>
+  </g>
 
-  <!-- Right vertical fine line -->
-  <line x1="335" y1="68" x2="335" y2="428" stroke="#8FA392" stroke-width="0.5" opacity="0.1"/>
+  <!-- Small branch twigs -->
+  <g filter="url(#brushFine)">
+    <path d="M280 260 Q300 240 310 225" fill="none" stroke="#6a5e52" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M310 250 Q330 245 345 255" fill="none" stroke="#6a5e52" stroke-width="2" stroke-linecap="round"/>
+    <path d="M195 240 Q185 225 178 210" fill="none" stroke="#6a5e52" stroke-width="2" stroke-linecap="round"/>
+    <path d="M185 275 Q170 265 160 255" fill="none" stroke="#6a5e52" stroke-width="2" stroke-linecap="round"/>
+  </g>
 
-  <!-- Bottom accent mark — small sage line -->
-  <rect x="185" y="445" width="30" height="2" rx="1" fill="#8FA392" opacity="0.15"/>
+  <!-- ===== Carrier Pigeon perched on branch ===== -->
+  <g filter="url(#brushMed)">
+    <!-- Body — plump pigeon body -->
+    <path d="M255 290 Q235 260 215 245 Q205 240 200 245 Q195 250 200 265 Q205 280 215 295 Q225 305 240 310 Q250 312 258 305 Q262 300 255 290Z"
+          fill="url(#sageBody)"/>
+
+    <!-- Belly/underside — lighter sage -->
+    <path d="M240 308 Q230 305 220 295 Q215 285 218 275 Q222 270 230 272 Q238 278 242 290 Q243 300 240 308Z"
+          fill="url(#sageLight)" opacity="0.7"/>
+
+    <!-- Chest highlight -->
+    <ellipse cx="218" cy="265" rx="10" ry="14" fill="#a8bca8" opacity="0.3"/>
+
+    <!-- Wing — folded along body -->
+    <path d="M250 290 Q238 270 232 252 Q228 245 236 242 Q244 243 252 255 Q262 270 265 290 Q260 295 250 290Z"
+          fill="#6a7d6e" opacity="0.85"/>
+  </g>
+
+  <!-- Tail feathers — extending down-right -->
+  <g filter="url(#brushBold)">
+    <path d="M252 305 Q262 320 268 335 Q270 342 265 340 Q258 335 250 320 Q248 312 252 305Z"
+          fill="#5a6d5e"/>
+    <path d="M258 302 Q272 315 280 330 Q283 338 278 337 Q270 332 262 318 Q258 310 258 302Z"
+          fill="#6a7d6e" opacity="0.7"/>
+  </g>
+
+  <!-- Head -->
+  <g filter="url(#brushFine)">
+    <ellipse cx="200" cy="235" rx="14" ry="12" fill="#8FA392"/>
+  </g>
+
+  <!-- Beak -->
+  <g filter="url(#brushFine)">
+    <path d="M187 232 Q178 228 174 226 Q172 225 174 224 Q178 225 186 230Z"
+          fill="#7a6e5e"/>
+    <line x1="174" y1="225" x2="170" y2="226" stroke="#5a4e42" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Eye -->
+  <g>
+    <circle cx="194" cy="232" r="3.5" fill="#3a3228"/>
+    <circle cx="193" cy="231" r="1.2" fill="#faf6ef"/>
+  </g>
+
+  <!-- Legs — thin lines gripping branch -->
+  <g filter="url(#brushFine)">
+    <line x1="232" y1="300" x2="230" y2="308" stroke="#5a4e42" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="240" y1="302" x2="238" y2="310" stroke="#5a4e42" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Feet / claws on branch -->
+    <path d="M225 310 Q227 313 230 310" fill="none" stroke="#5a4e42" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M234 312 Q236 315 240 312" fill="none" stroke="#5a4e42" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== Subtle calligraphy mark (right side) ===== -->
+  <!-- "SIGNO" in a vertical-like composition, like a stamp/seal -->
+  <g filter="url(#brushFine)" opacity="0.25">
+    <!-- Minimal vertical accent lines suggesting a seal/ stamp -->
+    <rect x="340" y="80" width="1.5" height="30" rx="0.5" fill="#7B8E7F"/>
+    <rect x="348" y="85" width="1.5" height="20" rx="0.5" fill="#7B8E7F"/>
+    <rect x="356" y="82" width="1.5" height="25" rx="0.5" fill="#7B8E7F"/>
+    <!-- Small seal-like square frame -->
+    <rect x="335" y="75" width="28" height="40" rx="1" fill="none" stroke="#7B8E7F" stroke-width="1.2" opacity="0.35"/>
+  </g>
+
+  <!-- Subtle sage seal mark at bottom-right -->
+  <g filter="url(#brushBold)" opacity="0.15">
+    <rect x="370" y="455" width="20" height="20" rx="2" fill="#8FA392"/>
+    <line x1="375" y1="460" x2="385" y2="470" stroke="#f4f0ea" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+    <line x1="385" y1="460" x2="375" y2="470" stroke="#f4f0ea" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+  </g>
 
 </svg>
