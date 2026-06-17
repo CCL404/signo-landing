@@ -369,13 +369,13 @@
     }
     .project-card .proj-visual {
       aspect-ratio: 16 / 10;
-      background: #edefe8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #8a9a7a;
-      font-size: 0.8rem;
-      font-weight: 500;
+      overflow: hidden;
+    }
+    .project-card .proj-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .project-card .proj-body { padding: 24px 24px 28px; }
     .project-card h4 { font-size: 0.95rem; margin-bottom: 8px; }
@@ -794,21 +794,21 @@
       <p class="section-desc">These are representative examples of the kind of work we handle. Each project is tailored to the client's space and brand.</p>
       <div class="projects-grid">
         <div class="project-card">
-          <div class="proj-visual">Office door sign refresh</div>
+          <div class="proj-visual"><img src="proj-meeting-room.jpg" alt="Meeting room slider sign" loading="lazy"></div>
           <div class="proj-body">
             <h4>Office Door Sign Refresh</h4>
             <p>Replaced outdated adhesive labels with matching brushed aluminium nameplates for a 10-suite professional office. Included removal of old signage and light wall touch-up.</p>
           </div>
         </div>
         <div class="project-card">
-          <div class="proj-visual">Room ID &amp; directional update</div>
+          <div class="proj-visual"><img src="proj-wayfinding.jpg" alt="Wayfinding directional sign" loading="lazy"></div>
           <div class="proj-body">
             <h4>Room ID &amp; Directional Signage</h4>
             <p>Designed and installed consistent room identification and directional signage across two floors of a shared workspace. Clear, minimal, easy to follow.</p>
           </div>
         </div>
         <div class="project-card">
-          <div class="proj-visual">Sign removal &amp; wall patch</div>
+          <div class="proj-visual"><img src="proj-drywall.jpg" alt="Drywall finish after sign removal" loading="lazy"></div>
           <div class="proj-body">
             <h4>Sign Removal &amp; Wall Finish</h4>
             <p>Removed outdated tenant signage from a lobby directory and restored the wall surface to a clean, paintable finish ready for new branding.</p>
