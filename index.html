@@ -20,24 +20,15 @@
     body {
       font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
       color: #7a6e5e;
+      line-height: 1.7;
       background-color: #f4f0ea;
       background-image:
-        /* Granular tooth — SVG noise */
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"),
-        /* Chalky mineral haze — low, wide patches */
-        linear-gradient(105deg, rgba(138,154,122,0.04) 0%, transparent 15%, rgba(138,154,122,0.025) 30%, transparent 50%, rgba(130,140,115,0.03) 70%, transparent 85%),
-        /* Trowel streak 1 — vertical mineral deposit */
-        linear-gradient(92deg, transparent 10%, rgba(138,154,122,0.035) 22%, transparent 28%, transparent 55%, rgba(160,165,145,0.025) 62%, transparent 72%, transparent 88%, rgba(138,154,122,0.02) 95%),
-        /* Trowel streak 2 — broken horizontal patch */
-        linear-gradient(135deg, transparent 8%, rgba(200,190,175,0.035) 18%, transparent 25%, rgba(180,175,160,0.025) 35%, transparent 48%, rgba(138,154,122,0.015) 60%, transparent 75%, rgba(160,165,145,0.025) 85%, transparent 95%),
-        /* Uneven render — conic-like angular patch */
-        radial-gradient(ellipse 70% 40% at 25% 40%, rgba(160,165,145,0.03) 0%, transparent 100%),
-        radial-gradient(ellipse 50% 60% at 70% 75%, rgba(138,154,122,0.02) 0%, transparent 100%),
-        /* Faint mineral residue */
-        linear-gradient(180deg, rgba(180,175,160,0.02) 0%, transparent 30%, rgba(138,154,122,0.015) 50%, transparent 70%, rgba(160,165,145,0.02) 100%);
-      background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-      background-size: 300px 300px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-      line-height: 1.7;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"),
+        linear-gradient(92deg, rgba(138,154,122,0.035) 15%, transparent 25%, transparent 50%, rgba(200,190,175,0.03) 65%, transparent 75%, rgba(138,154,122,0.015) 90%),
+        radial-gradient(ellipse 60% 40% at 30% 50%, rgba(180,175,160,0.025) 0%, transparent 100%),
+        radial-gradient(ellipse 40% 50% at 70% 60%, rgba(138,154,122,0.015) 0%, transparent 100%);
+      background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+      background-size: 300px 300px, 100% 100%, 100% 100%, 100% 100%;
     }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
@@ -237,14 +228,11 @@
     section:nth-child(even) {
       background-color: #faf6ef;
       background-image:
-        /* Granular tooth — slightly lighter for this surface */
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E"),
-        /* Mineral wash */
-        linear-gradient(95deg, transparent 5%, rgba(200,190,175,0.03) 20%, transparent 35%, rgba(180,175,160,0.025) 50%, transparent 65%, rgba(160,165,145,0.02) 80%),
-        radial-gradient(ellipse 40% 50% at 80% 20%, rgba(138,154,122,0.025) 0%, transparent 100%),
-        radial-gradient(ellipse 60% 30% at 20% 80%, rgba(200,190,175,0.02) 0%, transparent 100%);
-      background-repeat: repeat, no-repeat, no-repeat, no-repeat;
-      background-size: 300px 300px, 100% 100%, 100% 100%, 100% 100%;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E"),
+        linear-gradient(95deg, rgba(200,190,175,0.03) 20%, transparent 40%, rgba(160,165,145,0.02) 60%, transparent 80%),
+        radial-gradient(ellipse 50% 40% at 75% 25%, rgba(138,154,122,0.02) 0%, transparent 100%);
+      background-repeat: repeat, no-repeat, no-repeat;
+      background-size: 300px 300px, 100% 100%, 100% 100%;
     }
 
     /* ===== Services ===== */
