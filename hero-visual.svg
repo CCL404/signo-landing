@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <!-- Plaster/limewash surface texture -->
+    <filter id="plaster" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="5" seed="3" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feComponentTransfer in="grayNoise" result="softNoise">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="softNoise" mode="multiply"/>
+    </filter>
+
+    <!-- Dusty mineral haze -->
+    <filter id="haze" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="7" result="haze"/>
+      <feColorMatrix type="saturate" values="0" in="haze" result="grayHaze"/>
+      <feComponentTransfer in="grayHaze" result="softHaze">
+        <feFuncA type="linear" slope="0.04"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="softHaze" mode="screen"/>
+    </filter>
+
+    <!-- Brush stroke displacement for signage lines -->
+    <filter id="brushLine" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="12" result="brushNoise"/>
+      <feDisplacementMap in="SourceGraphic" in2="brushNoise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Subtle shadow for the panel -->
+    <filter id="panelShadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="3" dy="4" stdDeviation="6" flood-color="#3a3228" flood-opacity="0.08"/>
+    </filter>
+
+    <!-- Softer inner shadow for depth -->
+    <filter id="innerShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset dx="0" dy="2" result="offsetBlur"/>
+      <feFlood flood-color="#3a3228" flood-opacity="0.06"/>
+      <feComposite in2="offsetBlur" operator="in" result="shadow"/>
+      <feComposite in="SourceGraphic" in2="shadow" operator="over"/>
+    </filter>
+
+    <!-- Grain overlay for the entire canvas -->
+    <filter id="canvasGrain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="5" result="grain"/>
+      <feColorMatrix type="saturate" values="0" in="grain" result="grayGrain"/>
+      <feComponentTransfer in="grayGrain" result="softGrain">
+        <feFuncA type="linear" slope="0.025"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="softGrain" mode="multiply"/>
+    </filter>
+
+    <!-- Sage green fill gradient for signage mark -->
+    <linearGradient id="sageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8FA392"/>
+      <stop offset="100%" stop-color="#7B8E7F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background — warm off-white wall -->
+  <rect width="400" height="500" fill="#f4f0ea" filter="url(#canvasGrain)"/>
+
+  <!-- Subtle light from upper-left (warm glow) -->
+  <ellipse cx="80" cy="60" rx="200" ry="180" fill="#faf6ef" opacity="0.15"/>
+
+  <!-- ===== Main material panel ===== -->
+  <!-- Shadow beneath panel -->
+  <rect x="46" y="36" width="312" height="430" rx="3" fill="#3a3228" opacity="0.06" filter="url(#panelShadow)"/>
+
+  <!-- Panel surface — grey-beige limewash -->
+  <rect x="42" y="32" width="312" height="430" rx="3" fill="#faf6ef" filter="url(#plaster)"/>
+
+  <!-- Panel surface haze/mottling (uneven render) -->
+  <rect x="42" y="32" width="312" height="430" rx="3" fill="none" filter="url(#haze)"/>
+
+  <!-- Soft light on top-left of panel -->
+  <ellipse cx="110" cy="90" rx="100" ry="80" fill="#ffffff" opacity="0.04"/>
+
+  <!-- Subtle shadow on right side of panel (depth) -->
+  <rect x="300" y="32" width="54" height="430" rx="0" fill="#3a3228" opacity="0.02"/>
+
+  <!-- ===== Signage design element ===== -->
+  <g filter="url(#brushLine)" opacity="0.92">
+
+    <!-- Door icon — centered, enlarged on the panel -->
+    <!-- Door frame — rectangular door shape -->
+    <rect x="160" y="120" width="80" height="190" rx="3" fill="none" stroke="url(#sageGrad)" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Door hinge line (vertical division, slightly offset) -->
+    <line x1="195" y1="130" x2="195" y2="300" stroke="url(#sageGrad)" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Door knob circle -->
+    <circle cx="222" cy="220" r="7" fill="none" stroke="url(#sageGrad)" stroke-width="2.5"/>
+
+    <!-- Directional arrow element below door -->
+    <!-- Arrow shaft -->
+    <line x1="200" y1="330" x2="200" y2="370" stroke="url(#sageGrad)" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Arrow head -->
+    <polyline points="192,362 200,375 208,362" fill="none" stroke="url(#sageGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Small horizontal accent lines suggesting signage text -->
+    <line x1="155" y1="395" x2="245" y2="395" stroke="#7B8E7F" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+    <line x1="170" y1="405" x2="230" y2="405" stroke="#7B8E7F" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+    <line x1="180" y1="415" x2="220" y2="415" stroke="#7B8E7F" stroke-width="1.2" stroke-linecap="round" opacity="0.25"/>
+
+  </g>
+
+  <!-- ===== Subtle framing lines (architectural context) ===== -->
+  <!-- Top horizontal fine line -->
+  <line x1="60" y1="68" x2="340" y2="68" stroke="#8FA392" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Right vertical fine line -->
+  <line x1="335" y1="68" x2="335" y2="428" stroke="#8FA392" stroke-width="0.5" opacity="0.1"/>
+
+  <!-- Bottom accent mark — small sage line -->
+  <rect x="185" y="445" width="30" height="2" rx="1" fill="#8FA392" opacity="0.15"/>
+
+</svg>
