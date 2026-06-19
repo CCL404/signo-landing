@@ -63,19 +63,6 @@
       font-family: 'Barlow Condensed', sans-serif;
       text-transform: uppercase; letter-spacing: .08em; font-size: 22px;
     }
-    .brand-mark {
-      width: 26px; height: 26px; border: 1px solid var(--line-strong);
-      position: relative; background: #fff; flex-shrink: 0;
-    }
-    .brand-mark::before {
-      content: ''; position: absolute; inset: 4px;
-      border-top: 2px solid var(--text); border-left: 2px solid var(--text);
-    }
-    .brand-mark::after {
-      content: ''; position: absolute;
-      width: 8px; height: 8px; right: -3px; bottom: -3px;
-      background: var(--accent); border: 1px solid rgba(0,0,0,.08);
-    }
     .nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
     .nav-links a {
       text-transform: uppercase; font-size: 12px;
@@ -394,7 +381,6 @@
     .fw { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .fw a { transition: color .2s; }
     .fw a:hover { color: var(--text); }
-    .fw .col { display: flex; flex-direction: column; gap: 6px; }
 
     /* ===== Responsive ===== */
     @media (max-width: 960px) {
@@ -454,8 +440,7 @@
 <header class="topbar">
   <div class="wrap nav">
     <div class="brand">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <img src="logo-nav.png" alt="Signo Studio" style="height:20px;width:auto;display:block;filter:brightness(.85)">
+      <img src="logo-nav.png" alt="Signo Studio" style="height:22px;width:auto;display:block">
     </div>
     <nav class="nav-links" id="navLinks">
       <a href="#services">Services</a>
@@ -728,7 +713,10 @@
 
 <footer>
   <div class="wrap fw">
-    <span>&copy; 2026 Signo Studio &nbsp;·&nbsp; Melbourne, Australia</span>
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <img src="logo-footer.png" alt="Signo Studio" style="height:24px;width:auto;display:block">
+      <span style="color:#646a70;font-size:11px;letter-spacing:.14em;text-transform:uppercase">&copy; 2026 Melbourne, Australia</span>
+    </div>
     <div style="display:flex;gap:24px">
       <a href="mailto:info@signostudio.com.au">info@signostudio.com.au</a>
     </div>
