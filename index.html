@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signo Studio — Door Signs, Wayfinding &amp; Finishing | Melbourne</title>
-  <meta name="description" content="Signo Studio helps Melbourne businesses create clearer, more professional spaces with door signs, wayfinding systems, and minor finishing work. Get a quote today.">
+  <meta name="description" content="Signo Studio helps Melbourne businesses create clearer, more professional spaces with door signs, wayfinding systems, and minor finishing work.">
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
@@ -12,102 +12,142 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     /* ===== Reset & Base ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
     body {
-      font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
-      color: #7a6e5e;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      font-size: 0.95rem;
+      color: #646a70;
       line-height: 1.7;
-      background-color: #f4f0ea;
-      background-image:
-        linear-gradient(92deg, rgba(138,154,122,0.05) 15%, transparent 28%, transparent 48%, rgba(200,190,175,0.045) 62%, transparent 76%, rgba(138,154,122,0.035) 90%),
-        radial-gradient(ellipse 60% 40% at 30% 50%, rgba(180,175,160,0.04) 0%, transparent 100%),
-        radial-gradient(ellipse 40% 50% at 70% 60%, rgba(138,154,122,0.03) 0%, transparent 100%);
-      background-repeat: no-repeat, no-repeat, no-repeat;
-      background-size: 100% 100%, 100% 100%, 100% 100%;
+      background-color: #f5f5f2;
     }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 clamp(16px, 4vw, 40px);
-    }
+    ::selection { background: #8aa8b5; color: #fff; }
 
     /* ===== Typography ===== */
     h1, h2, h3, h4 {
-      font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
-      font-weight: 600;
-      color: #3a3228;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
+      font-family: 'Barlow Condensed', -apple-system, system-ui, sans-serif;
+      font-weight: 700;
+      color: #111111;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
     }
     h1 {
-      font-size: clamp(2.4rem, 4.5vw, 3.4rem);
-      font-weight: 600;
-      letter-spacing: -0.03em;
+      font-size: clamp(3.2rem, 6vw, 5rem);
+      letter-spacing: 0.02em;
       margin-bottom: 20px;
     }
     h2 {
-      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      letter-spacing: 0.01em;
+      margin-bottom: 14px;
     }
     h3 {
-      font-size: clamp(1.15rem, 1.6vw, 1.3rem);
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
       font-weight: 600;
+      letter-spacing: 0.04em;
       margin-bottom: 8px;
     }
     .section-label {
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #8a9a7a;
+      letter-spacing: 0.18em;
+      color: #8aa8b5;
       margin-bottom: 12px;
     }
     .section-desc {
       font-size: 1rem;
-      color: #8a8070;
+      color: #646a70;
       max-width: 600px;
-      margin-bottom: clamp(28px, 5vw, 48px);
-      line-height: 1.6;
+      margin-bottom: clamp(32px, 5vw, 56px);
+      line-height: 1.65;
     }
-    .serif { font-family: 'DM Sans', -apple-system, system-ui, sans-serif; }
 
     /* ===== Buttons ===== */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 13px 30px;
-      font-family: inherit;
-      font-size: 0.93rem;
+      padding: 12px 28px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
       font-weight: 500;
-      border-radius: 0;
-      border: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-radius: 2px;
+      border: 1px solid transparent;
       cursor: pointer;
-      transition: background 0.25s, color 0.25s;
+      transition: all 0.2s;
     }
     .btn-primary {
-      background: #8a9a7a;
-      color: #faf6ef;
+      background: #111111;
+      color: #fff;
+      border-color: #111111;
     }
-    .btn-primary:hover { background: #7a8a6a; }
+    .btn-primary:hover { background: #333; }
     .btn-secondary {
       background: transparent;
-      color: #6a7a5a;
-      border: 1px solid #cad5ba;
+      color: #111111;
+      border-color: rgba(0,0,0,0.18);
     }
     .btn-secondary:hover {
-      background: #8a9a7a;
-      border-color: #8a9a7a;
-      color: #faf6ef;
+      border-color: #111111;
+      background: #111111;
+      color: #fff;
+    }
+    .btn-accent {
+      background: #8aa8b5;
+      color: #fff;
+      border-color: #8aa8b5;
+    }
+    .btn-accent:hover { background: #7a98a5; }
+
+    /* ===== Container ===== */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 48px);
+    }
+
+    /* ===== Section spacing ===== */
+    section { padding: clamp(60px, 10vw, 120px) 0; }
+
+    /* ===== Technical dividers (thin rule) ===== */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(0,0,0,0.06);
+    }
+
+    /* ===== Technical corner marks ===== */
+    .tech-corner {
+      position: relative;
+    }
+    .tech-corner::before,
+    .tech-corner::after {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: rgba(0,0,0,0.08);
+      border-style: solid;
+      pointer-events: none;
+    }
+    .tech-corner::before {
+      top: 0; left: 0;
+      border-width: 1px 0 0 1px;
+    }
+    .tech-corner::after {
+      bottom: 0; right: 0;
+      border-width: 0 1px 1px 0;
     }
 
     /* ===== Header / Nav ===== */
@@ -115,35 +155,40 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(244,240,234,0.93);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #e5ddd0;
+      background: rgba(245,245,242,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 68px;
+      height: 64px;
     }
     .logo {
-      font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: #3a3228;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      font-size: 0;
     }
-    .logo span { color: #8a9a7a; }
+    .logo img { height: 28px; width: auto; display: block; }
     .nav-links {
       display: flex;
-      gap: 36px;
-      font-size: 0.85rem;
-      font-weight: 500;
+      gap: 32px;
     }
-    .nav-links a { color: #7a6e5e; transition: color 0.2s; }
-    .nav-links a:hover { color: #8a9a7a; }
+    .nav-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #646a70;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #111111; }
     .nav-cta {
       padding: 8px 20px;
-      font-size: 0.83rem;
+      font-size: 0.72rem;
     }
     .mobile-toggle {
       display: none;
@@ -154,117 +199,197 @@
     }
     .mobile-toggle span {
       display: block;
-      width: 24px;
+      width: 22px;
       height: 1.5px;
-      background: #3a3228;
+      background: #111111;
       margin: 6px 0;
       transition: 0.3s;
     }
 
     /* ===== Hero ===== */
     .hero {
-      padding: clamp(110px, 16vw, 160px) 0 clamp(48px, 6vw, 80px);
+      padding: clamp(120px, 18vw, 180px) 0 clamp(60px, 8vw, 100px);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle printed grid overlay on hero */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
-    .hero h1 {
-      color: #3a3228;
-      margin-bottom: 16px;
-    }
-    .hero h1 .accent { color: #8a9a7a; }
+    .hero h1 { margin-bottom: 18px; }
+    .hero h1 .accent { color: #8aa8b5; }
     .hero p {
-      font-size: 1.05rem;
-      color: #8a8070;
+      font-size: 1rem;
+      color: #646a70;
       margin-bottom: 10px;
       max-width: 520px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
     .hero .location-tag {
-      font-size: 0.85rem;
-      color: #a09888;
+      font-size: 0.8rem;
+      color: #8aa8b5;
       margin-bottom: 28px;
-      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0.02em;
     }
-    .hero-trust {
+    .hero-tags {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       margin-bottom: 28px;
       flex-wrap: wrap;
     }
-    .hero-trust span {
-      font-size: 0.78rem;
-      color: #6a7a5a;
-      background: #edefe8;
-      padding: 5px 14px;
-      border-radius: 2px;
-      letter-spacing: 0.03em;
+    .hero-tags span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #646a70;
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 4px 12px;
+      border-radius: 1px;
     }
     .hero-actions {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
     }
+
+    /* Hero visual — technical framed panel */
     .hero-visual {
-      border-radius: 4px;
-      aspect-ratio: 4 / 5;
       position: relative;
-      overflow: hidden;
-      background: #edefe8;
+      aspect-ratio: 4 / 5;
+      max-height: 520px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #fafaf8;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+    }
+    /* Frame corner marks */
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(0,0,0,0.04);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .hero-visual .corner-tl,
+    .hero-visual .corner-tr,
+    .hero-visual .corner-bl,
+    .hero-visual .corner-br {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-color: rgba(0,0,0,0.12);
+      border-style: solid;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-visual .corner-tl { top: 4px; left: 4px; border-width: 1px 0 0 1px; }
+    .hero-visual .corner-tr { top: 4px; right: 4px; border-width: 1px 1px 0 0; }
+    .hero-visual .corner-bl { bottom: 4px; left: 4px; border-width: 0 0 1px 1px; }
+    .hero-visual .corner-br { bottom: 4px; right: 4px; border-width: 0 1px 1px 0; }
+    /* Subtle technical crosshair center */
+    .hero-visual .crosshair {
+      position: absolute;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.06;
+    }
+    .hero-visual .crosshair-h,
+    .hero-visual .crosshair-v {
+      position: absolute;
+      background: #000;
+    }
+    .hero-visual .crosshair-h {
+      width: 24px; height: 1px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-visual .crosshair-v {
+      width: 1px; height: 24px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-visual .crosshair-circle {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.08);
+      pointer-events: none;
+      z-index: 2;
     }
     .hero-visual img {
       width: 85%;
       height: auto;
       display: block;
+      position: relative;
+      z-index: 1;
     }
 
-    /* ===== Sections — distinct backgrounds ===== */
-    .hero { background: #f4f0ea; }
-    #services { background: #f6f1e4; }
-    #why { background: #eef2ec; }
-    #process { background: #f0ece0; }
-    #spaces { background: #f2eee6; }
-    #projects { background: #eceade; }
-    #faq { background: #f3f2ea; }
-    #contact { background: #eceddd; }
-
     /* ===== Services ===== */
+    #services { background: #fafaf8; }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 2px;
+      background: rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
     }
     .service-card {
-      background: #f4f0ea;
-      border-radius: 4px;
-      padding: 40px 32px;
-      transition: background 0.25s;
+      background: #fafaf8;
+      padding: 48px 36px;
+      transition: background 0.2s;
+      position: relative;
     }
-    .service-card:hover { background: #edefe8; }
-    .service-icon {
-      width: 64px;
-      height: 64px;
+    .service-card:hover { background: #f5f5f2; }
+    .service-card .icon-wrap {
+      width: 40px;
+      height: 40px;
       margin-bottom: 24px;
-      color: #8fa392;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,0,0,0.1);
+      color: #8aa8b5;
+      font-size: 1.1rem;
+      font-weight: 600;
     }
-    .service-icon svg { display: block; width: 100%; height: 100%; }
+    .service-card h3 { margin-bottom: 10px; }
     .service-card p {
-      font-size: 0.9rem;
-      color: #8a8070;
-      margin-bottom: 4px;
+      font-size: 0.88rem;
+      color: #646a70;
       line-height: 1.6;
+      margin-bottom: 16px;
     }
     .service-card .outcome {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
       font-weight: 500;
-      color: #6a7a5a;
-      font-size: 0.85rem;
-      margin-top: 16px;
+      color: #8aa8b5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       display: block;
     }
 
@@ -272,136 +397,188 @@
     .why-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 0;
     }
     .why-item {
-      padding: 24px 0;
-      border-bottom: 1px solid #e5ddd0;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
       display: flex;
-      gap: 16px;
+      gap: 20px;
       align-items: flex-start;
     }
-    .why-item:last-of-type { border: none; }
+    .why-item:nth-last-child(-n+2) { border-bottom: none; }
     .why-mark {
-      font-size: 1.3rem;
-      color: #8a9a7a;
       flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .why-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
-    .why-item p { font-size: 0.88rem; color: #8a8070; }
-
-    /* ===== Process ===== */
-    .process-steps {
-      display: flex;
-      gap: 0;
-      overflow-x: auto;
-      padding-bottom: 8px;
-    }
-    .process-step {
-      flex: 1;
-      min-width: 140px;
-      text-align: center;
-      position: relative;
-      padding: 0 16px;
-    }
-    .process-step:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 22px;
-      right: -8px;
-      width: 16px;
-      height: 1px;
-      background: #d5cdc0;
-    }
-    .step-num {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid #cad5ba;
-      color: #6a7a5a;
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(0,0,0,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
-      font-weight: 500;
-      margin: 0 auto 14px;
+      margin-top: 2px;
     }
-    .process-step h4 { font-size: 0.9rem; margin-bottom: 6px; }
-    .process-step p { font-size: 0.8rem; color: #a09888; line-height: 1.5; }
+    .why-mark span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #8aa8b5;
+    }
+    .why-item h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .why-item p { font-size: 0.88rem; color: #646a70; line-height: 1.6; }
+
+    /* ===== Process ===== */
+    #process { background: #fafaf8; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(0,0,0,0.06);
+    }
+    .process-step {
+      background: #fafaf8;
+      padding: 36px 28px;
+      position: relative;
+      text-align: center;
+    }
+    .process-step + .process-step {
+      border-left: 1px solid rgba(0,0,0,0.06);
+    }
+    .step-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #8aa8b5;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    .process-step h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .process-step p {
+      font-size: 0.8rem;
+      color: #646a70;
+      line-height: 1.5;
+    }
 
     /* ===== Suitable Spaces ===== */
     .spaces-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 0;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(0,0,0,0.06);
     }
     .space-card {
-      background: #f4f0ea;
-      border-radius: 4px;
-      padding: 28px 16px;
+      background: #f5f5f2;
+      padding: 36px 24px;
       text-align: center;
+      position: relative;
     }
-    .space-card .icon { font-size: 1.6rem; margin-bottom: 10px; display: block; }
-    .space-card h4 { font-size: 0.88rem; font-weight: 500; }
+    .space-card + .space-card { border-left: 1px solid rgba(0,0,0,0.06); }
+    .space-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      display: block;
+      opacity: 0.7;
+      filter: grayscale(0.6);
+    }
+    .space-card h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
 
     /* ===== Project Examples ===== */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 2px;
+      background: rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
     }
     .project-card {
-      background: #f4f0ea;
-      border-radius: 4px;
+      background: #f5f5f2;
       overflow: hidden;
+      position: relative;
     }
     .project-card .proj-visual {
       aspect-ratio: 16 / 10;
       overflow: hidden;
+      filter: saturate(0.9) contrast(1.05);
     }
     .project-card .proj-visual img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s;
     }
-    .project-card .proj-body { padding: 24px 24px 28px; }
-    .project-card h4 { font-size: 0.95rem; margin-bottom: 8px; }
-    .project-card p { font-size: 0.85rem; color: #8a8070; line-height: 1.6; }
+    .project-card:hover .proj-visual img { transform: scale(1.03); }
+    .project-card .proj-body {
+      padding: 28px 28px 32px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .project-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+    .project-card p {
+      font-size: 0.85rem;
+      color: #646a70;
+      line-height: 1.6;
+    }
 
     /* ===== FAQ ===== */
-    .faq-list { max-width: 700px; }
+    .faq-list { max-width: 720px; }
     .faq-item {
-      border-bottom: 1px solid #e5ddd0;
-      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 22px 0;
     }
     .faq-q {
-      font-weight: 500;
-      color: #3a3228;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #111111;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .faq-q:focus-visible {
-      outline: 2px solid #8a9a7a;
+      outline: 2px solid #8aa8b5;
       outline-offset: 4px;
-      border-radius: 2px;
+      border-radius: 1px;
     }
     .faq-q::after {
-      content: "+";
+      content: '+';
+      font-family: 'Inter', sans-serif;
       font-size: 1.2rem;
-      color: #8a9a7a;
-      font-weight: 300;
+      font-weight: 400;
+      color: #8aa8b5;
+      transition: transform 0.2s;
     }
-    .faq-item.open .faq-q::after { content: "–"; }
+    .faq-item.open .faq-q::after { content: '–'; }
     .faq-a {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.35s ease, padding 0.35s ease;
       font-size: 0.9rem;
-      color: #8a8070;
+      color: #646a70;
       line-height: 1.6;
     }
     .faq-item.open .faq-a {
@@ -410,42 +587,66 @@
     }
 
     /* ===== Contact ===== */
+    #contact { background: #fafaf8; }
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 56px;
       align-items: start;
     }
-    .contact-info p { margin-bottom: 16px; }
-    .contact-info .detail { font-size: 0.9rem; color: #8a8070; line-height: 1.7; }
+    .contact-info h3 {
+      margin-bottom: 16px;
+    }
+    .contact-info p { font-size: 0.92rem; line-height: 1.7; }
+    .contact-info .detail {
+      font-size: 0.88rem;
+      color: #646a70;
+      line-height: 1.7;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .contact-info .detail:last-of-type { border: none; }
+    .contact-info .detail strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #111111;
+      display: block;
+      margin-bottom: 4px;
+    }
     .form-group { margin-bottom: 18px; }
     .form-group label {
       display: block;
-      font-size: 0.83rem;
-      font-weight: 500;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       margin-bottom: 6px;
-      color: #3a3228;
+      color: #111111;
     }
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 12px 14px;
-      font-family: inherit;
-      font-size: 0.92rem;
-      border: 1px solid #d5cdc0;
+      padding: 11px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      border: 1px solid rgba(0,0,0,0.1);
       border-radius: 2px;
-      background: #faf6ef;
-      color: #3a3228;
-      transition: border-color 0.2s, background 0.2s;
+      background: #fff;
+      color: #111111;
+      transition: border-color 0.2s;
     }
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: #8a9a7a;
-      background: #fff;
+      border-color: #8aa8b5;
     }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #b0b4b8; }
     .form-group textarea { resize: vertical; min-height: 90px; }
     .form-row {
       display: grid;
@@ -455,91 +656,78 @@
 
     /* ===== Footer ===== */
     footer {
-      background: #3a3228;
-      color: #b0a898;
-      padding: 52px 0 32px;
+      background: #111111;
+      color: #8a8e92;
+      padding: 56px 0 32px;
     }
     footer .container {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
+      gap: 48px;
     }
-    footer .logo { color: #e5ddd0; margin-bottom: 10px; display: inline-block; }
-    footer p.foot-desc { font-size: 0.85rem; color: #8a8070; max-width: 280px; line-height: 1.6; }
+    footer .logo { margin-bottom: 14px; display: inline-block; }
+    footer .logo img { height: 28px; width: auto; display: block; filter: brightness(2); }
+    footer p.foot-desc {
+      font-size: 0.85rem;
+      color: #6a6e72;
+      max-width: 280px;
+      line-height: 1.6;
+    }
     footer h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      color: #d5cdc0;
-      font-size: 0.8rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 500;
-      margin-bottom: 14px;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: 16px;
     }
     footer ul li { margin-bottom: 8px; }
-    footer a { font-size: 0.85rem; color: #b0a898; transition: color 0.2s; }
-    footer a:hover { color: #e5ddd0; }
+    footer a { font-size: 0.85rem; color: #8a8e92; transition: color 0.2s; }
+    footer a:hover { color: #fff; }
     .foot-bottom {
       grid-column: 1 / -1;
-      border-top: 1px solid #5a4e42;
+      border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 24px;
-      margin-top: 24px;
-      font-size: 0.8rem;
-      color: #7a6e5e;
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: #5a5e62;
       display: flex;
       justify-content: space-between;
-    }
-
-    /* ===== Container fluid ===== */
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 clamp(16px, 4vw, 40px);
-    }
-
-    /* ===== Section spacing fluid ===== */
-    section { padding: clamp(48px, 8vw, 100px) 0; }
-
-    /* ===== Typography fluid ===== */
-    .section-desc {
-      max-width: 600px;
-      margin-bottom: clamp(28px, 5vw, 48px);
-    }
-
-    /* ===== Hero fluid ===== */
-    .hero {
-      padding: clamp(110px, 16vw, 160px) 0 clamp(48px, 6vw, 80px);
+      letter-spacing: 0.03em;
     }
 
     /* ===== Responsive ===== */
     @media (max-width: 1024px) {
       .hero-grid { gap: 40px; }
-      .services-grid { gap: 20px; }
-      .process-step { min-width: 120px; padding: 0 10px; }
+      .process-steps { grid-template-columns: repeat(5, 1fr); }
+      .process-step { padding: 28px 18px; }
+      .service-card { padding: 36px 24px; }
     }
 
     @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
       .hero-visual { aspect-ratio: 4 / 5; max-height: 420px; }
       .hero p { max-width: 100%; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .spaces-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
-      footer .container { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .service-card { padding: 32px 24px; }
+      .spaces-grid .space-card:nth-child(even) {
+        border-left: 1px solid rgba(0,0,0,0.06);
+      }
+      .spaces-grid .space-card:nth-child(3) { border-left: none; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      footer .container { grid-template-columns: 1fr 1fr; gap: 36px; }
     }
 
     @media (max-width: 768px) {
-      .hero { padding: 100px 0 40px; }
-      .hero-grid { gap: 28px; }
-      .hero h1 { margin-bottom: 14px; }
-      .hero p { font-size: 1rem; }
-      .hero .location-tag { margin-bottom: 20px; }
-      .hero-trust { gap: 10px; margin-bottom: 22px; }
-      .hero-trust span { font-size: 0.75rem; padding: 4px 10px; }
-      .why-grid { grid-template-columns: 1fr; gap: 0; }
-      .projects-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-      .section-desc { font-size: 0.95rem; }
-      footer .container { gap: 24px; }
+      .hero { padding: 100px 0 48px; }
+      .hero-grid { gap: 32px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(0,0,0,0.06); }
+      .why-item:last-child { border-bottom: none; }
+      .projects-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+      .process-steps { grid-template-columns: repeat(3, 1fr); }
+      .process-step:nth-child(4) { border-left: none; }
     }
 
     @media (max-width: 640px) {
@@ -549,37 +737,36 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 68px;
+        top: 64px;
         left: 0; right: 0;
-        background: #f4f0ea;
-        border-bottom: 1px solid #e5ddd0;
-        padding: 20px clamp(16px, 4vw, 28px);
+        background: rgba(245,245,242,0.98);
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        padding: 20px clamp(20px, 4vw, 28px);
         gap: 18px;
       }
-      .hero { padding: 96px 0 36px; }
-      .hero-visual { aspect-ratio: 4 / 5; max-height: 360px; }
+      .hero-visual { max-height: 360px; }
       .services-grid { grid-template-columns: 1fr; }
-      .service-card { padding: 28px 20px; }
-      .process-steps { flex-direction: column; gap: 0; }
-      .process-step { display: flex; gap: 14px; text-align: left; padding: 16px 0; min-width: auto; }
-      .process-step:not(:last-child)::after { display: none; }
-      .process-step + .process-step { border-top: 1px solid #e5ddd0; }
-      .process-step .step-num { margin: 0; flex-shrink: 0; }
+      .service-card { padding: 32px 24px; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-step:nth-child(3) { border-left: none; }
+      .process-step:nth-child(odd) { border-left: none; }
       .projects-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      footer .container { grid-template-columns: 1fr; }
+      footer .container { grid-template-columns: 1fr; gap: 28px; }
       .foot-bottom { flex-direction: column; gap: 4px; }
     }
 
     @media (max-width: 420px) {
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; }
-      .hero-trust { flex-direction: column; align-items: flex-start; }
-      .spaces-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .space-card { padding: 20px 12px; }
+      .hero-tags { flex-direction: column; align-items: flex-start; }
+      .spaces-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+      .spaces-grid .space-card + .space-card { border-left: 1px solid rgba(0,0,0,0.06); }
+      .process-steps { grid-template-columns: 1fr; }
+      .process-step + .process-step { border-left: none; border-top: 1px solid rgba(0,0,0,0.06); }
     }
 
-    /* ===== Grain overlay — fixed over entire page ===== */
+    /* ===== Subtle technical grain overlay ===== */
     .grain {
       position: fixed;
       inset: 0;
@@ -587,11 +774,11 @@
       pointer-events: none;
       width: 100vw;
       height: 100vh;
-      opacity: 1;
-      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC42NSIgbnVtT2N0YXZlcz0iNCIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjxmZUNvbG9yTWF0cml4IHR5cGU9InNhdHVyYXRlIiB2YWx1ZXM9IjAiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjA4Ii8+PC9zdmc+");
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC42NSIgbnVtT2N0YXZlcz0iNCIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjxmZUNvbG9yTWF0cml4IHR5cGU9InNhdHVyYXRlIiB2YWx1ZXM9IjAiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjA0Ii8+PC9zdmc+");
       background-repeat: repeat;
       background-size: 200px 200px;
       mix-blend-mode: multiply;
+      opacity: 0.5;
     }
   </style>
 </head>
@@ -601,8 +788,8 @@
   <!-- ===== Header ===== -->
   <header>
     <div class="container nav">
-      <a href="#" class="logo" style="display:flex;align-items:center;gap:0">
-        <img src="logo-nav.png" alt="Signo Studio" style="height:32px;width:auto;display:block">
+      <a href="#" class="logo">
+        <img src="logo-nav.png" alt="Signo Studio">
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="#services">Services</a>
@@ -619,14 +806,16 @@
   </header>
 
   <main>
+
   <!-- ===== Hero ===== -->
   <section class="hero" id="hero">
     <div class="container hero-grid">
       <div>
-        <h1>Designed to Guide. <span class="accent">Built to Last.</span></h1>
+        <p class="section-label">Melbourne — Signage &amp; Finishing</p>
+        <h1>Designed to Guide.<br><span class="accent">Built to Last.</span></h1>
         <p>Door signs, wayfinding, and small-to-medium finishing projects for Melbourne businesses. Signo Studio takes on the detail-focused work other contractors often pass over, with clear timelines, visible progress, and regular client updates.</p>
         <p class="location-tag">— Melbourne, Victoria</p>
-        <div class="hero-trust">
+        <div class="hero-tags">
           <span>Melbourne-based</span>
           <span>Small-to-medium jobs</span>
           <span>Design &amp; install</span>
@@ -637,32 +826,41 @@
         </div>
       </div>
       <div class="hero-visual">
+        <div class="corner-tl"></div><div class="corner-tr"></div>
+        <div class="corner-bl"></div><div class="corner-br"></div>
+        <div class="crosshair">
+          <div class="crosshair-h"></div>
+          <div class="crosshair-v"></div>
+        </div>
+        <div class="crosshair-circle"></div>
         <img src="hero-visual.jpg" alt="Signo Studio" loading="lazy">
       </div>
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- ===== Services ===== -->
   <section id="services">
     <div class="container">
-      <p class="section-label">Services</p>
+      <p class="section-label">01 · Services</p>
       <h2>What we do</h2>
-      <p class="section-desc">Clear, well-made signage and finishing for commercial interiors. Each service is designed for small-to-medium jobs that larger contractors often won't take.</p>
+      <p class="section-desc">Clear, well-made signage and finishing for commercial interiors. Each service is designed for the small-to-medium jobs that larger contractors often won't take on.</p>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs><filter id="brushA" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="7" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4" xChannelSelector="R" yChannelSelector="G"/></filter></defs><g filter="url(#brushA)" fill="none" stroke="#8FA392" stroke-linecap="round" stroke-linejoin="round"><path d="M32 20.5C31 21.2 30.4 22.3 30.4 23.7V72.4C30.4 73.9 31.2 75 32.6 75.8H61.8C63.1 75 63.9 73.9 63.9 72.4V23.9C63.9 22.4 63.2 21.2 62 20.5Z" stroke-width="4.8"/><path d="M39.5 22.8V73.1" stroke-width="4.2"/><path d="M52.2 47.9c1.8-.5 3.3.2 4 1.7.7 1.7-.3 3.4-2.3 4" stroke-width="3.6"/></g></svg></div>
+          <div class="icon-wrap">⌗</div>
           <h3>Door Signs</h3>
           <p>Room ID, nameplates, department signage, glass door decals, and suite identification. Custom sizes, finishes, and mounting for any interior.</p>
           <span class="outcome">→ Clear, professional room identification</span>
         </div>
         <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs><filter id="brushB" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="1" seed="11" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="B"/></filter></defs><g filter="url(#brushB)" fill="none" stroke="#8FA392" stroke-linecap="round" stroke-linejoin="round"><path d="M28 68.5C28 57 28.2 49.2 28.4 43.6C28.9 32.7 36.5 26.6 46.4 26.6H59.5" stroke-width="5"/><path d="M54.2 19.8L68 26.7 54.4 34.5" stroke-width="4.8"/><path d="M28 68.5c1.5-1.8 3.5-2.6 5.6-2" stroke-width="3.6"/></g></svg></div>
+          <div class="icon-wrap">⨁</div>
           <h3>Wayfinding</h3>
           <p>Directional signage, floor directories, zone identification, and lobby maps. Helps visitors and staff navigate your space without confusion.</p>
           <span class="outcome">→ Easy navigation, fewer interruptions</span>
         </div>
         <div class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs><filter id="brushC" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="1" seed="15" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.35" xChannelSelector="G" yChannelSelector="R"/></filter></defs><g filter="url(#brushC)" fill="none" stroke="#8FA392" stroke-linecap="round" stroke-linejoin="round"><path d="M33.8 26.3C36.3 23.4 40.2 23.1 42.8 25.6L49 31.8C50.8 33.7 51.1 36.1 49.7 37.8L43.3 45.3C42.1 46.7 40 47.1 38.3 46.2C34.9 44.5 31.9 41.7 29.9 38.3C29 36.8 29.3 34.8 30.6 33.4Z" stroke-width="4.3"/><path d="M43.1 45.1L60.9 62.8" stroke-width="4.5"/><path d="M55.9 64.5C59.4 63.2 62.7 62.9 66.2 63.6" stroke-width="4"/></g></svg></div>
+          <div class="icon-wrap">⌗</div>
           <h3>Minor Repairs / Finishing</h3>
           <p>Wall touch-ups after sign removal, surface preparation for new signage, and small patching work related to signage changes. Not a full plastering service — just the finishing details that make a signage update look complete.</p>
           <span class="outcome">→ Clean results, no leftover marks or holes</span>
@@ -671,36 +869,38 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- ===== Why Choose Us ===== -->
   <section id="why">
     <div class="container">
-      <p class="section-label">Why Signo</p>
+      <p class="section-label">02 · Why Signo</p>
       <h2>Signage done properly</h2>
-      <p class="section-desc">We take the time to understand your space, recommend what works, and deliver clean results — no shortcuts, no surprises.</p>
+      <p class="section-desc">We take time to understand your space, recommend what works, and deliver clean results — no shortcuts, no surprises.</p>
       <div class="why-grid">
         <div class="why-item">
-          <span class="why-mark">→</span>
+          <div class="why-mark"><span></span></div>
           <div>
             <h4>Clear communication</h4>
             <p>We explain what's needed, what it will look like, and how long it takes. No jargon, no hidden costs.</p>
           </div>
         </div>
         <div class="why-item">
-          <span class="why-mark">→</span>
+          <div class="why-mark"><span></span></div>
           <div>
             <h4>Clean, professional outcomes</h4>
             <p>Every sign is installed carefully, aligned properly, and the area is left clean. We treat your space with respect.</p>
           </div>
         </div>
         <div class="why-item">
-          <span class="why-mark">→</span>
+          <div class="why-mark"><span></span></div>
           <div>
             <h4>Suitable for small-to-medium jobs</h4>
             <p>Single door sign, a floor of wayfinding, or a full office refresh — we take the work that bigger shops turn away.</p>
           </div>
         </div>
         <div class="why-item">
-          <span class="why-mark">→</span>
+          <div class="why-mark"><span></span></div>
           <div>
             <h4>Thoughtful signage updates</h4>
             <p>We consider existing architecture, brand direction, and how people actually use the space — not just where to stick a sign.</p>
@@ -710,35 +910,37 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- ===== Process ===== -->
   <section id="process">
     <div class="container">
-      <p class="section-label">Process</p>
+      <p class="section-label">03 · Process</p>
       <h2>How it works</h2>
       <p class="section-desc">A straightforward workflow from enquiry to installation. Most projects move from quote to completion within a week or two.</p>
       <div class="process-steps">
         <div class="process-step">
-          <div class="step-num">1</div>
+          <div class="step-num">01</div>
           <h4>Enquiry</h4>
-          <p>Submit a quote form or email us at info@signostudio.com.au to get started.</p>
+          <p>Submit a quote form or email us to get started.</p>
         </div>
         <div class="process-step">
-          <div class="step-num">2</div>
+          <div class="step-num">02</div>
           <h4>Site Review</h4>
           <p>If required, we visit your space to assess requirements, take measurements, and discuss options.</p>
         </div>
         <div class="process-step">
-          <div class="step-num">3</div>
+          <div class="step-num">03</div>
           <h4>Quote</h4>
           <p>You receive a clear, itemised quote with material options and timelines.</p>
         </div>
         <div class="process-step">
-          <div class="step-num">4</div>
+          <div class="step-num">04</div>
           <h4>Fabrication</h4>
           <p>Signage is prepared to your specifications in quality materials.</p>
         </div>
         <div class="process-step">
-          <div class="step-num">5</div>
+          <div class="step-num">05</div>
           <h4>Installation</h4>
           <p>We install on-site, clean up, and confirm everything looks right.</p>
         </div>
@@ -746,10 +948,12 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- ===== Suitable Spaces ===== -->
   <section id="spaces">
     <div class="container">
-      <p class="section-label">Suitable Spaces</p>
+      <p class="section-label">04 · Spaces</p>
       <h2>Where we work</h2>
       <p class="section-desc">Our signage and finishing services suit a range of commercial and professional environments across Melbourne.</p>
       <div class="spaces-grid">
@@ -773,12 +977,14 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- ===== Project Examples ===== -->
   <section id="projects">
     <div class="container">
-      <p class="section-label">Typical Work</p>
-      <h2>Examples of what we do</h2>
-      <p class="section-desc">These are representative examples of the kind of work we handle. Each project is tailored to the client's space and brand.</p>
+      <p class="section-label">05 · Projects</p>
+      <h2>Examples of our work</h2>
+      <p class="section-desc">Representative examples of the kind of work we handle. Each project is tailored to the client's space and brand.</p>
       <div class="projects-grid">
         <div class="project-card">
           <div class="proj-visual"><img src="proj-meeting-room.jpg" alt="Meeting room slider sign" loading="lazy"></div>
@@ -805,10 +1011,12 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- ===== FAQ ===== -->
   <section id="faq">
     <div class="container">
-      <p class="section-label">FAQ</p>
+      <p class="section-label">06 · FAQ</p>
       <h2>Common questions</h2>
       <div class="faq-list">
         <div class="faq-item">
@@ -839,10 +1047,12 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- ===== Contact ===== -->
   <section id="contact">
     <div class="container">
-      <p class="section-label">Contact</p>
+      <p class="section-label">07 · Contact</p>
       <h2>Get a quote</h2>
       <p class="section-desc">Tell us about your space and what you need. We'll get back to you with a clear, itemised quote within 1–2 business days.</p>
       <div class="contact-grid">
@@ -892,26 +1102,28 @@
           <button type="submit" class="btn btn-primary" style="width:100%">Get a Quote</button>
         </form>
         <div class="contact-info">
-          <p style="margin-bottom:16px;font-size:1.05rem;color:#3a3228;">Prefer to call or email?</p>
-          <div class="detail" style="margin-bottom:12px;">
-            <strong>Email</strong><br>
+          <h3>Contact</h3>
+          <div class="detail">
+            <strong>Email</strong>
             info@signostudio.com.au
           </div>
-          <div class="detail" style="margin-bottom:12px;">
-            <strong>Service area</strong><br>
+          <div class="detail">
+            <strong>Service area</strong>
             Melbourne metropolitan, Victoria
           </div>
+          <p style="margin-top:20px;font-size:0.85rem;color:#646a70;">Prefer email? We respond within 1–2 business days.</p>
         </div>
       </div>
     </div>
   </section>
+
   </main>
 
   <!-- ===== Footer ===== -->
   <footer>
     <div class="container">
       <div>
-        <img src="logo-footer.png" alt="Signo Studio" style="height:36px;width:auto;display:block;margin-bottom:10px">
+        <a href="#" class="logo"><img src="logo-footer.png" alt="Signo Studio"></a>
         <p class="foot-desc">Door signs, wayfinding, and finishing for Melbourne businesses. Clear signage for better spaces.</p>
       </div>
       <div>
