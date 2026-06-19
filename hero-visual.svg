@@ -10,7 +10,7 @@
   </defs>
 
   <!-- Canvas -->
-  <rect width="600" height="750" fill="#f3f4f3" filter="url(#grain)"/>
+  <rect width="600" height="750" fill="#f5f5f2" filter="url(#grain)"/>
 
   <!-- ===== Subtle grid background ===== -->
   <g stroke="rgba(0,0,0,0.03)" stroke-width="0.5">
