@@ -715,7 +715,7 @@
     <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
       <a href="#hero"><img src="logo-footer.png" alt="Signo Studio" style="height:44px;width:105px;display:block"></a>
       <span style="color:#646a70;font-size:11px;letter-spacing:.14em;text-transform:uppercase">&copy; 2026 Melbourne, Australia</span>
-      <span style="color:#b0b4b8;font-size:10px;letter-spacing:.08em">Built 2026-06-24 23:33 AEST</span>
+      <span style="color:#b0b4b8;font-size:10px;letter-spacing:.08em">Built 2026-06-24 23:40 AEST</span>
     </div>
     <div style="display:flex;gap:24px">
       <a href="mailto:info@signostudio.com.au">info@signostudio.com.au</a>
@@ -724,14 +724,14 @@
 </footer>
 
 <script>
-document.querySelectorAll('.fq').forEach(el=>{
+try{document.querySelectorAll('.fq').forEach(el=>{
   el.addEventListener('click',()=>el.parentElement.classList.toggle('open'))
   el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.parentElement.classList.toggle('open')}})
-})
+})}catch(e){console.warn('fq init:',e)}
 // Dynamic hover sizing for all card grids
-(()=>{
+try{(()=>{
   document.querySelectorAll('[data-dynamic]').forEach(grid=>{
-    const cards = grid.querySelectorAll('.card');
+    const cards = Array.from(grid.querySelectorAll('.card'));
     if(!cards.length) return;
     cards.forEach(c=>{
       c.addEventListener('mouseenter',()=>{
@@ -743,7 +743,7 @@ document.querySelectorAll('.fq').forEach(el=>{
     });
     cards[0]?.classList.add('active');
   });
-})();
+})()}catch(e){console.warn('grid init:',e)}
 document.getElementById('quoteForm')?.addEventListener('submit',async function(e){
   e.preventDefault();
   const b=e.target,q=b.querySelector('[type=submit]'),o=b.querySelector('.fmsg');
@@ -773,7 +773,7 @@ document.getElementById('quoteForm')?.addEventListener('submit',async function(e
   }
   q.disabled=0;q.textContent='Get a Quote';
 })
-document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('active')})})
+try{document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('active')})})}catch(e){console.warn('nav init:',e)}
 </script>
 </body>
 </html>
