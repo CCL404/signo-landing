@@ -715,7 +715,7 @@
     <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
       <a href="#hero"><img src="logo-footer.png" alt="Signo Studio" style="height:44px;width:105px;display:block"></a>
       <span style="color:#646a70;font-size:11px;letter-spacing:.14em;text-transform:uppercase">&copy; 2026 Melbourne, Australia</span>
-      <span style="color:#b0b4b8;font-size:10px;letter-spacing:.08em">Built 2026-06-24 23:14 AEST</span>
+      <span style="color:#b0b4b8;font-size:10px;letter-spacing:.08em">Built 2026-06-24 23:18 AEST</span>
     </div>
     <div style="display:flex;gap:24px">
       <a href="mailto:info@signostudio.com.au">info@signostudio.com.au</a>
@@ -745,14 +745,28 @@ document.querySelectorAll('.fq').forEach(el=>{
   });
 })();
 document.getElementById('quoteForm')?.addEventListener('submit',async function(e){
-  e.preventDefault();const b=e.target,q=b.querySelector('[type=submit]'),o=b.querySelector('.fmsg');
-  o?.remove();const msg=document.createElement('div');msg.className='fmsg';msg.style.cssText='font-size:13px;font-weight:600;margin-top:12px;color:var(--muted)';
+  e.preventDefault();
+  const b=e.target,q=b.querySelector('[type=submit]'),o=b.querySelector('.fmsg');
+  o?.remove();
+  const msg=document.createElement('div');msg.className='fmsg';msg.style.cssText='font-size:13px;font-weight:600;margin-top:12px;color:var(--muted)';
   msg.textContent='Sending…';b.appendChild(msg);q.disabled=1;q.textContent='Sending…';
-  const d={name:b.name.value,company:b.company.value,email:b.email.value,phone:b.phone.value,location:b.location.value,jobtype:b.jobtype.value,description:b.description.value};
+  const d={
+    name:document.getElementById('name').value,
+    company:document.getElementById('company').value,
+    email:document.getElementById('email').value,
+    phone:document.getElementById('phone').value,
+    location:document.getElementById('location').value,
+    jobtype:document.getElementById('jobtype').value,
+    description:document.getElementById('description').value
+  };
   try{
-    await fetch(b.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    const r=await fetch(b.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    console.log('PA response status:',r.status);
     msg.style.color='#1a7f3a';msg.textContent='✓ Thanks! We\'ll be in touch within 1–2 business days.';b.reset();
-  }catch(e){msg.style.color='#c0392b';msg.textContent='Something went wrong — please email us at info@signostudio.com.au'}
+  }catch(err){
+    console.error('Submit error:',err);
+    msg.style.color='#c0392b';msg.textContent='Something went wrong — please email us at info@signostudio.com.au';
+  }
   q.disabled=0;q.textContent='Get a Quote';
 })
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('active')})})
