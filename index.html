@@ -673,7 +673,7 @@
       <p>Tell us about your space and what you need. We'll get back to you with a clear, itemised quote within 1–2 business days.</p>
     </div>
     <div class="cgrid">
-      <form id="quoteForm" action="#" method="post">
+      <form id="quoteForm" action="https://default02e9208d79064d75a1cb37ace3af5d.2b.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7d6fba80681744ea8096a628f1b6b3bc/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Ty0aKiDHzc4ugeVrbwkD0wgCsbvcvj6LWy-afhHCopk" method="post">
         <div class="fr">
           <div class="fg"><label for="name">Name *</label><input type="text" id="name" name="name" required></div>
           <div class="fg"><label for="company">Company</label><input type="text" id="company" name="company"></div>
@@ -743,7 +743,17 @@ document.querySelectorAll('.fq').forEach(el=>{
     cards[0]?.classList.add('active');
   });
 })();
-document.getElementById('quoteForm')?.addEventListener('submit',function(e){e.preventDefault();alert('Thanks for your enquiry! We will get back to you within 1–2 business days.')})
+document.getElementById('quoteForm')?.addEventListener('submit',async function(e){
+  e.preventDefault();const b=e.target,q=b.querySelector('[type=submit]'),o=b.querySelector('.fmsg');
+  o?.remove();const msg=document.createElement('div');msg.className='fmsg';msg.style.cssText='font-size:13px;font-weight:600;margin-top:12px;color:var(--muted)';
+  msg.textContent='Sending…';b.appendChild(msg);q.disabled=1;q.textContent='Sending…';
+  const d={name:b.name.value,company:b.company.value,email:b.email.value,phone:b.phone.value,location:b.location.value,jobtype:b.jobtype.value,description:b.description.value};
+  try{
+    await fetch(b.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    msg.style.color='#1a7f3a';msg.textContent='✓ Thanks! We\'ll be in touch within 1–2 business days.';b.reset();
+  }catch(e){msg.style.color='#c0392b';msg.textContent='Something went wrong — please email us at info@signostudio.com.au'}
+  q.disabled=0;q.textContent='Get a Quote';
+})
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('active')})})
 </script>
 </body>
