@@ -218,15 +218,15 @@
 
     /* Card grid */
     .grid-3 { display: flex; gap: 18px; }
-    .grid-3 .card { flex: 1; transition: flex .45s cubic-bezier(.25,.46,.45,.94), background .3s, box-shadow .35s, transform .35s; min-width: 0; }
+    .grid-3 .card { flex: 1; transition: flex .45s cubic-bezier(.25,.46,.45,.94), box-shadow .35s, transform .35s; min-width: 0; }
     .grid-3 .card.active { flex: 1.9; }
 
     .grid-5 { display: flex; gap: 12px; }
-    .grid-5 .card { flex: 1; transition: flex .45s cubic-bezier(.25,.46,.45,.94), background .3s, box-shadow .35s, transform .35s; min-width: 0; }
+    .grid-5 .card { flex: 1; transition: flex .45s cubic-bezier(.25,.46,.45,.94), box-shadow .35s, transform .35s; min-width: 0; }
     .grid-5 .card.active { flex: 1.5; }
 
     .grid-4 { display: flex; gap: 12px; }
-    .grid-4 .card { flex: 1; transition: flex .45s cubic-bezier(.25,.46,.45,.94), background .3s, box-shadow .35s, transform .35s; min-width: 0; }
+    .grid-4 .card { flex: 1; transition: flex .45s cubic-bezier(.25,.46,.45,.94), box-shadow .35s, transform .35s; min-width: 0; }
     .grid-4 .card.active { flex: 1.4; }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
@@ -237,7 +237,7 @@
       padding: 24px;
       position: relative; overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,.03);
-      transition: all .35s cubic-bezier(.25,.46,.45,.94);
+      transition: box-shadow .35s cubic-bezier(.25,.46,.45,.94), transform .35s;
     }
     .card:hover {
       transform: translateY(-4px);
@@ -282,7 +282,7 @@
 
     /* Process steps */
     .step { padding: 22px 14px; text-align: center; min-height: 140px; transition: all .3s; }
-    .step:hover { background: rgba(17,17,17,.03); transform: translateY(-2px); }
+    .step:hover { transform: translateY(-2px); }
     .step:hover .num { color: var(--text); }
     .step .num {
       font-family: 'Barlow Condensed', sans-serif;
@@ -294,7 +294,7 @@
 
     /* Spaces */
     .sp { padding: 28px 16px; text-align: center; transition: all .3s; }
-    .sp:hover { background: rgba(17,17,17,.03); transform: translateY(-2px); }
+    .sp:hover { transform: translateY(-2px); }
     .sp .emo {
       font-size: 24px; margin-bottom: 8px; display: block;
       opacity: .5; filter: grayscale(.5);
@@ -715,7 +715,7 @@
     <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
       <a href="#hero"><img src="logo-footer.png" alt="Signo Studio" style="height:44px;width:105px;display:block"></a>
       <span style="color:#646a70;font-size:11px;letter-spacing:.14em;text-transform:uppercase">&copy; 2026 Melbourne, Australia</span>
-      <span style="color:#b0b4b8;font-size:10px;letter-spacing:.08em">Built 2026-06-25 14:22 AEST</span>
+      <span style="color:#b0b4b8;font-size:10px;letter-spacing:.08em">Built 2026-06-25 14:26 AEST</span>
     </div>
     <div style="display:flex;gap:24px">
       <a href="mailto:info@signostudio.com.au">info@signostudio.com.au</a>
