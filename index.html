@@ -29,6 +29,21 @@
       --radius: 6px;
       --max: 1140px;
     }
+    /* ── Scroll Reveal ─────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .55s cubic-bezier(.25,.46,.45,.94), transform .55s cubic-bezier(.25,.46,.45,.94); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-stagger > * { opacity: 0; transform: translateY(24px); transition: opacity .45s ease-out, transform .45s ease-out; }
+    .reveal.visible .reveal-stagger > *:nth-child(1) { transition-delay: 0s; }
+    .reveal.visible .reveal-stagger > *:nth-child(2) { transition-delay: .08s; }
+    .reveal.visible .reveal-stagger > *:nth-child(3) { transition-delay: .16s; }
+    .reveal.visible .reveal-stagger > *:nth-child(4) { transition-delay: .24s; }
+    .reveal.visible .reveal-stagger > *:nth-child(5) { transition-delay: .32s; }
+    .reveal.visible .reveal-stagger > * { opacity: 1; transform: translateY(0); }
+
+    /* ── Hero Entrance ─────────────────────────────────────── */
+    .hero { animation: heroIn .7s ease-out forwards; }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
     body {
@@ -495,12 +510,12 @@
   </section>
 
   <!-- ===== Services ===== -->
-  <section class="wrap section" id="services">
+  <section class="wrap section reveal" id="services">
     <div class="section-head">
       <h2>What we do</h2>
       <p>Clear, well-made signage and finishing for commercial interiors. Each service is designed for the small-to-medium jobs that larger contractors often won't take on.</p>
     </div>
-    <div class="grid-3" data-dynamic>
+    <div class="grid-3 reveal-stagger" data-dynamic>
       <article class="card srvc">
         <span class="card-tag">⌗ Service</span>
         <h3>Door Signs</h3>
@@ -523,12 +538,12 @@
   </section>
 
   <!-- ===== Why ===== -->
-  <section class="wrap section" id="why">
+  <section class="wrap section reveal" id="why">
     <div class="section-head">
       <h2>Why Signo</h2>
       <p>We take time to understand your space, recommend what works, and deliver clean results — no shortcuts, no surprises.</p>
     </div>
-    <div class="grid-2">
+    <div class="grid-2 reveal-stagger">
       <article class="card why">
         <div class="dot"><i></i></div>
         <h3>Clear communication</h3>
@@ -553,12 +568,12 @@
   </section>
 
   <!-- ===== Process ===== -->
-  <section class="wrap section" id="process">
+  <section class="wrap section reveal" id="process">
     <div class="section-head">
       <h2>How it works</h2>
       <p>A straightforward workflow from enquiry to installation. Most projects move from quote to completion within a week or two.</p>
     </div>
-    <div class="grid-5" data-dynamic>
+    <div class="grid-5 reveal-stagger" data-dynamic>
       <article class="card step">
         <div class="num">01</div>
         <h3>Enquiry</h3>
@@ -588,12 +603,12 @@
   </section>
 
   <!-- ===== Spaces ===== -->
-  <section class="wrap section" id="spaces">
+  <section class="wrap section reveal" id="spaces">
     <div class="section-head">
       <h2>Where we work</h2>
       <p>Our signage and finishing services suit a range of commercial and professional environments across Melbourne.</p>
     </div>
-    <div class="grid-4" data-dynamic>
+    <div class="grid-4 reveal-stagger" data-dynamic>
       <article class="card sp"><span class="emo">🏢</span><h3>Offices</h3></article>
       <article class="card sp"><span class="emo">🏥</span><h3>Clinics</h3></article>
       <article class="card sp"><span class="emo">🏫</span><h3>Schools</h3></article>
@@ -602,12 +617,12 @@
   </section>
 
   <!-- ===== Projects ===== -->
-  <section class="wrap section" id="projects">
+  <section class="wrap section reveal" id="projects">
     <div class="section-head">
       <h2>Our work</h2>
       <p>Representative examples of the kind of work we handle. Each project is tailored to the client's space and brand.</p>
     </div>
-    <div class="grid-3" data-dynamic>
+    <div class="grid-3 reveal-stagger" data-dynamic>
       <article class="card proj">
         <div class="pv"><img src="proj-meeting-room.jpg" alt="Meeting room slider sign" loading="lazy"></div>
         <div class="pb">
@@ -633,12 +648,12 @@
   </section>
 
   <!-- ===== FAQ ===== -->
-  <section class="wrap section" id="faq">
+  <section class="wrap section reveal" id="faq">
     <div class="section-head">
       <h2>Common questions</h2>
       <p>Everything you need to know before getting started.</p>
     </div>
-    <div class="faqs">
+    <div class="faqs reveal-stagger">
       <div class="fi">
         <div class="fq" tabindex="0" role="button">What kinds of jobs do you take?</div>
         <div class="fa">We focus on door signs, wayfinding systems, and minor finishing work related to signage changes. Jobs can be as small as a single nameplate or as large as a full office wayfinding system.</div>
@@ -667,12 +682,12 @@
   </section>
 
   <!-- ===== Contact ===== -->
-  <section class="wrap section" id="contact">
+  <section class="wrap section reveal" id="contact">
     <div class="section-head">
       <h2>Get a quote</h2>
       <p>Tell us about your space and what you need. We'll get back to you with a clear, itemised quote within 1–2 business days.</p>
     </div>
-    <div class="cgrid">
+    <div class="cgrid reveal-stagger">
       <form id="quoteForm" action="https://default02e9208d79064d75a1cb37ace3af5d.2b.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7d6fba80681744ea8096a628f1b6b3bc/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Ty0aKiDHzc4ugeVrbwkD0wgCsbvcvj6LWy-afhHCopk" method="post">
         <div class="fr">
           <div class="fg"><label for="name">Name *</label><input type="text" id="name" name="name" required></div>
@@ -710,7 +725,7 @@
   </section>
 </main>
 
-<footer>
+<footer class="reveal">
   <div class="wrap fw">
     <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
       <a href="#hero"><img src="logo-footer.png" alt="Signo Studio" style="height:44px;width:105px;display:block"></a>
@@ -774,6 +789,8 @@ document.getElementById('quoteForm')?.addEventListener('submit',async function(e
   q.disabled=0;q.textContent='Get a Quote';
 })
 try{document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('active')})})}catch(e){console.warn('nav init:',e)}
+// Scroll reveal
+try{(()=>{const o=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){n.target.classList.add('visible');o.unobserve(n.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>o.observe(e))})()}catch(e){}
 </script>
 </body>
 </html>
